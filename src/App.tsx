@@ -25,11 +25,12 @@ class App extends React.Component<{}, {}> {
             <Router>
                 <div>
                     <ul>
-                        <li><Link to="/">Home</Link></li>
+                        <li><Link to="/home">Home</Link></li>
                         <li><Link to="/about">About</Link></li>
                         <li><Link to="/topics">Topics</Link></li>
                     </ul>
-                    <Route path="/" component={Home}/>
+                    {/* <Home/> */}
+                    {/* <Route path="/" component={Home}/> */}
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
                 </div>
