@@ -1,0 +1,17 @@
+@import '../../styles/color.scss';
+.header {
+    height: 50px;
+    background-color: $background;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    li {
+        padding: 10px 20px;
+        a {
+            color: white;
+        }
+        a:hover {
+            color: RGBA(97, 218, 251, 1.00);
+        }
+    }
+}

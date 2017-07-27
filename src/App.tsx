@@ -1,7 +1,8 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import './App.scss';
-import { Home } from './components/home/home';
+import { Home } from './components/home/home.component';
+import { Header } from './components/header/header.component';
 const logo = require('./logo.svg');
 const About = () => (
     <div className="App">
@@ -24,26 +25,11 @@ class App extends React.Component<{}, {}> {
         return (
             <Router>
                 <div>
-                    <ul>
-                        <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/topics">Topics</Link></li>
-                    </ul>
-                    {/* <Home/> */}
-                    {/* <Route path="/" component={Home}/> */}
+                    <Header/>
                     <Route path="/home" component={Home}/>
                     <Route path="/about" component={About}/>
                 </div>
             </Router>
-            // <div className="App">
-            //     <div className="App-header">
-            //         <img src={logo} className="App-logo" alt="logo" />
-            //         <h2>Welcome to React</h2>
-            //     </div>
-            //     <p className="App-intro">
-            //         To get started, edit <code>src/App.tsx</code> and save to reload.
-            //     </p>
-            // </div>
         );
     }
 }

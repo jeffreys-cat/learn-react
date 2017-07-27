@@ -1,5 +1,63 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+@charset "utf-8";
+// media query
+@media only screen and (max-width: 320px) {
+    html {
+        font-size: 5px !important;
+    }
+}
+@media only screen and (min-width: 320px) {
+    html {
+        font-size: 6px !important;
+    }
+}
+@media only screen and (min-width: 384px) {
+    html {
+        font-size: 7px !important;
+    }
+}
+@media only screen and (min-width: 480px) {
+    html {
+        font-size: 8px !important;
+    }
+}
+@media only screen and (min-width: 640px) {
+    html {
+        font-size: 10px !important;
+    }
+}
+@import './styles/reset.scss';
+// common style
+input.input-material {
+    width: 100%;
+    box-shadow: 0 2px 2px rgba(0,0,0,0.24), 0 0 2px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+    border: 1px solid #fff;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 16px 0 32px;
+}
+input.input-material:focus {
+    border: 1px solid #42A5F5;
+    box-shadow: 0 2px 2px rgba(66,165,245,0.24), 0 0 2px rgba(66,165,245,0.12);
+}
+
+.button-material {
+    display: block;
+    width: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    user-select: none;
+    text-align: center;
+    background: #42A5F5;
+    color: white;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+    line-height: 40px;
+    font-size: 1.4rem;
+}
+
+// sweetalert2
+@import '../node_modules/sweetalert2/dist/sweetalert2.min.css';
+.swal2-confirm {
+    outline: none;
 }
