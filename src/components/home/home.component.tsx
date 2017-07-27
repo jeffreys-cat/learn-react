@@ -2,11 +2,11 @@ import * as React from 'react';
 import './home.component.scss';
 import { autobind } from 'core-decorators';
 import swal from 'sweetalert2';
-import { HomeProps, HomeState } from './home.model';
+import { IHomeProps, IHomeState } from './home.model';
 
 @autobind
-export class Home extends React.Component<HomeProps, HomeState> {
-    constructor(props: HomeProps) {
+export class Home extends React.Component<IHomeProps, IHomeState> {
+    constructor(props: IHomeProps) {
         super(props);
         this.state = {
             enthusiasmLevel: 1
