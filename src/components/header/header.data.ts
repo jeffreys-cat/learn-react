@@ -1,10 +1,10 @@
 import { ILink } from './header.model';
 export const InitedHeaderLinks: Array<ILink> = [
     {
-        to: '/home',
+        to: '/',
         name: 'Home',
         id: 1,
-        checked: false
+        checked: true
     },
     {
         to: '/about',
