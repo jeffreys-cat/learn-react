@@ -1,10 +1,13 @@
 import * as React from 'react';
 import './home.component.scss';
-import { autobind } from 'core-decorators';
 import swal from 'sweetalert2';
 import { IHomeProps, IHomeState } from './home.model';
+import { connect } from 'react-redux';
 
-@autobind
+// @connect(
+//     state => state,
+//     dispatch => bindActionCreaters({...homeActions, ...globalActions}, dispatch)
+// )
 export class Home extends React.Component<IHomeProps, IHomeState> {
     constructor(props: IHomeProps) {
         super(props);

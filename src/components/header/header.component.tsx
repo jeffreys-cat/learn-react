@@ -14,12 +14,12 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         };
     }
     // toggle checked state
-    private clickhandle(link: ILink) {
+    private clickhandle(link: ILink): void {
         this.resetChecked();
         link.checked = !link.checked;
     }
     // reset checked state
-    private resetChecked() {
+    private resetChecked(): void {
         InitedHeaderLinks.map((link: ILink) => {
             link.checked = false;
         });

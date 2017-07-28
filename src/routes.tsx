@@ -1,16 +1,16 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
+import { HashRouter, Route, Redirect } from 'react-router-dom';
 import Container from './containers/container';
 import Login from './pages/login/login.component';
 
 const routes = (
-    <Router>
+    <HashRouter>
         <div>
             <Route path="/" component={Container}/>
             <Route path="/login" component={Login}/>
-            <Redirect from="*" to="/login" />
+            <Redirect from="*" to="/" /> 
         </div>
-    </Router>
+    </HashRouter>
 );
 
 export default routes;

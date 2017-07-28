@@ -7,8 +7,8 @@ export interface IHeaderState {
 }
 
 export interface ILink {
-    to: string;
-    name: string;
-    id: number;
+    readonly to: string;
+    readonly name: string;
+    readonly id: number;
     checked: boolean;
 }

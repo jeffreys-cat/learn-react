@@ -1,22 +1,10 @@
 import * as React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { HashRouter as Router, Route } from 'react-router-dom';
 import './container.scss';
 import { Home } from '../components/home/home.component';
 import { Header } from '../components/header/header.component';
 import Login from '../pages/login/login.component';
-
-const logo = require('../assets/imgs/logo.svg');
-const About = () => (
-    <div className="App">
-        <div className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-            To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-    </div>
-);
+import { About } from '../components/about/about.component';
 
 class Container extends React.Component<{}, {}> {
     // 钩子函数
