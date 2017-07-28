@@ -1,0 +1,66 @@
+.login-wrap {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;       
+    top: 0;
+    bottom:0px;
+    left:0px;
+    background: url('../../assets/imgs/super-hero-large.png') no-repeat bottom center,linear-gradient(145deg,#0D47A1,#42A5F5);
+    background-size: 100%;
+    background-blend-mode: multiply;
+    .login-title {
+        color: white;
+    }
+    .login-form {
+        width: 40%;
+        background: white;
+        box-shadow: 0 2px 5px 0 rgba(0,0,0,0.24);
+        padding: 20px;
+        height: 300px;
+        input {
+            margin: 10px 0;
+            &:nth-child(1) {
+                margin-top: 0;
+            }
+        }
+        h3 {
+            text-align: center;
+            margin-top: 10px;
+        }
+        a {
+            display: block;
+            width: 150px;
+            margin: 0 auto;
+            cursor: pointer;
+            user-select: none;
+            text-align: center;
+            background: #42A5F5;
+            color: white;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
+            line-height: 40px;
+            i {
+                display: inline-block;
+                margin-right: 4px;
+                animation: loading 1.5s infinite;
+            }
+            @keyframes loading {
+                0% {
+                    transform: rotate(0deg) 
+                }
+                50% {
+                    transform: rotate(180deg)
+                }
+                100% {
+                    transform: rotate(360deg)
+                }
+            }
+        }
+        a:hover {
+            background: RGBA(49, 134, 218, 1.00);
+        }
+    }
+}
