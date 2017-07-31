@@ -2,11 +2,19 @@ import * as React from 'react';
 import './home.component.scss';
 import swal from 'sweetalert2';
 import { IHomeProps, IHomeState } from './home.model';
-import { connect } from 'react-redux';
+// import { connect } from 'react-redux';
+
+// const getCounter = (counter, type?) => {
+//     return counter;
+// };
+// const mapStateToProps = (state) => {
+//   return {
+//     todos: getCounter(state)
+//   };
+// };
 
 // @connect(
-//     state => state,
-//     dispatch => bindActionCreaters({...homeActions, ...globalActions}, dispatch)
+//     mapStateToProps
 // )
 export class Home extends React.Component<IHomeProps, IHomeState> {
     constructor(props: IHomeProps) {
