@@ -58,6 +58,7 @@ input.input-material:focus {
 
 // sweetalert2
 @import '../node_modules/sweetalert2/dist/sweetalert2.min.css';
-.swal2-confirm {
+.swal2-confirm:focus {
     outline: none;
+    box-shadow: none !important;
 }
