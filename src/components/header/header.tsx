@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
-import './header.component.scss';
+import './header.scss';
 // Interface & InitedData
 import { IHeaderProps, ILink, IHeaderState } from './header.model';
 import { InitedHeaderLinks } from './header.data';
@@ -14,12 +14,12 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         };
     }
     // toggle checked state
-    private clickhandle(link: ILink) {
+    private clickhandle(link: ILink): void {
         this.resetChecked();
         link.checked = !link.checked;
     }
     // reset checked state
-    private resetChecked() {
+    private resetChecked(): void {
         InitedHeaderLinks.map((link: ILink) => {
             link.checked = false;
         });
