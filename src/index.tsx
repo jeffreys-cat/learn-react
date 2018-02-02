@@ -12,9 +12,6 @@ import './index.scss';
 const store = createStore(
     counterReducers
 );
-store.subscribe(() => {
-    console.log(store.getState());
-});
 
 ReactDOM.render(
     <Provider store={store}>
