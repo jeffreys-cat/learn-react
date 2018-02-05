@@ -2,8 +2,8 @@ import * as React from 'react';
 import './home.scss';
 import { IHomeProps, IHomeState } from './home.model';
 import { connect } from 'react-redux';
-import { mapDispatchToProps } from '../../maps/mapDispatchToProps';
-import { mapStateToProps } from '../../maps/mapStateToProps';
+import { counterDispatchToProps } from '../../maps/mapDispatchToProps';
+import { counterStateToProps } from '../../maps/mapStateToProps';
 
 class Home extends React.Component<IHomeProps, IHomeState> {
     constructor(props: IHomeProps) {
@@ -31,4 +31,4 @@ class Home extends React.Component<IHomeProps, IHomeState> {
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Home);
+export default connect(counterStateToProps, counterDispatchToProps)(Home);

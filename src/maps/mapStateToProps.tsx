@@ -1,4 +1,4 @@
-export const mapStateToProps = (state: any): any => {
+export const counterStateToProps = (state: any): any => {
     return {
         enthusiasmLevel: state.counter
     };
