@@ -1,6 +1,9 @@
 import * as React from 'react';
 import './login.component.scss';
 import { ILoginState, ILoginProps } from './login.model';
+import { loginStateToProps } from '../../maps/mapStateToProps';
+import { loginDispatchToProps } from '../../maps/mapDispatchToProps';
+import { connect } from 'react-redux';
 
 class Login extends React.Component<ILoginProps, ILoginState> {
     constructor(props: ILoginProps) {
@@ -10,10 +13,6 @@ class Login extends React.Component<ILoginProps, ILoginState> {
             password: ''
         };
         this.handleChange = this.handleChange.bind(this);
-    }
-
-    private login() {
-        console.log(this.state);
     }
 
     // bind form
@@ -51,11 +50,11 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                             <input type="checkbox" defaultChecked={true}/> 记住密码
                         </label>
                     </div>
-                    <a className="login-button center-block" onClick={() => this.login()}>登录</a>
+                    <a className="login-button center-block" onClick={this.props.login}>登录</a>
                 </form>
             </div>
         );
     }
 }
 
-export default Login;
+export default connect(loginStateToProps, loginDispatchToProps)(Login);

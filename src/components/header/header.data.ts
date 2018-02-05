@@ -1,5 +1,5 @@
 import { ILink } from './header.model';
-export const InitedHeaderLinks: Array<ILink> = [
+export const InitializedHeaderLinks: Array<ILink> = [
     {
         to: '/',
         name: 'Home',

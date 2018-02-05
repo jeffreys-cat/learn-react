@@ -1,9 +1,9 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import './header.scss';
-// Interface & InitedData
+// Interface & InitializedData
 import { IHeaderProps, ILink, IHeaderState } from './header.model';
-import { InitedHeaderLinks } from './header.data';
+import { InitializedHeaderLinks } from './header.data';
 
 export class Header extends React.Component<IHeaderProps, IHeaderState> {
     // constructor
@@ -14,13 +14,13 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         };
     }
     // toggle checked state
-    private clickhandle(link: ILink): void {
+    private clickHandle(link: ILink): void {
         this.resetChecked();
         link.checked = !link.checked;
     }
     // reset checked state
     private resetChecked(): void {
-        InitedHeaderLinks.map((link: ILink) => {
+        InitializedHeaderLinks.map((link: ILink) => {
             link.checked = false;
         });
     }
@@ -32,8 +32,8 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         const normalStyle = {
             color: 'white'
         };
-        const headerItems = InitedHeaderLinks.map((link: ILink) => (
-            <li key={link.id.toString()} onClick={() => this.clickhandle(link)}>
+        const headerItems = InitializedHeaderLinks.map((link: ILink) => (
+            <li key={link.id.toString()} onClick={() => this.clickHandle(link)}>
                 <Link to={link.to} style={link.checked ? checkedStyle : normalStyle}>{link.name}</Link>
             </li>
         ));

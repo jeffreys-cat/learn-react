@@ -6,10 +6,15 @@ import { Header } from '../components/header/header';
 // import Login from '../pages/login/login.component';
 import { About } from '../components/about/about';
 
-class Container extends React.Component<{}, {}> {
+class Container extends React.Component<any, {}> {
     // 钩子函数
     componentDidMount() {
         console.log('app mounted!');
+        if (!localStorage.getItem('isLogined')) {
+            this.props.history.push({
+                pathname: '/login'
+            });
+        }
     }
     render() {
         return (

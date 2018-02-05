@@ -1,5 +1,5 @@
 export interface IHeaderProps extends React.Props<any> {
-    clickhandle?: () => void;
+    clickHandle?: () => void;
 }
 
 export interface IHeaderState {
