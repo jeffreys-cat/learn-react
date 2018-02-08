@@ -13,8 +13,8 @@ export const InitializedHeaderLinks: Array<ILink> = [
         checked: false
     },
     {
-        to: '/topics',
-        name: 'Topics',
+        to: '/apples',
+        name: 'Apples',
         id: 3,
         checked: false
     }

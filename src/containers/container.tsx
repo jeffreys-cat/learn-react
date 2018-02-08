@@ -5,16 +5,17 @@ import Home from '../components/home/home';
 import { Header } from '../components/header/header';
 // import Login from '../pages/login/login.component';
 import { About } from '../components/about/about';
+import { Apples } from '../components/apple/apple-basket';
 
 class Container extends React.Component<any, {}> {
     // 钩子函数
     componentDidMount() {
         console.log('app mounted!');
-        if (!localStorage.getItem('isLogined')) {
-            this.props.history.push({
-                pathname: '/login'
-            });
-        }
+        // if (!localStorage.getItem('isLogined')) {
+        //     this.props.history.push({
+        //         pathname: '/login'
+        //     });
+        // }
     }
     render() {
         return (
@@ -23,7 +24,7 @@ class Container extends React.Component<any, {}> {
                     <Header/>
                     <Route exact={true} path="/" component={Home}/>
                     <Route path="/about" component={About}/>
-                    {/* <Route path="/topics" component={Todos}/> */}
+                    <Route path="/apples" component={Apples}/>
                 </div>
             </Router>
         );
