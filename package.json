@@ -50,6 +50,7 @@
     "@types/redux-actions": "^2.2.3",
     "axios": "^0.17.1",
     "core-decorators": "^0.20.0",
+    "cross-fetch": "^1.1.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-redux": "^5.0.6",

@@ -11,7 +11,7 @@ export const loginReducer = (state: boolean = false, action: Action) => {
                 .catch(function (error: any) {
                     console.log(error);
                 });
-            return state;
+            return state = true;
         case 'LOGOUT':
             return;
         default:
