@@ -1,6 +1,7 @@
+import { Dispatch } from 'react-redux';
 const actions = {
     pickApple: () => {
-        return function (dispatch: any, getState: Function) {
+        return function (dispatch: Dispatch<any>, getState: Function) {
             /** 如果正在摘苹果，则结束这个thunk, 不执行摘苹果 */
             if (getState().appleBasketReducer.isPicking) {
                 return;
