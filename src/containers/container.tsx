@@ -5,7 +5,7 @@ import Home from '../components/home/home';
 import { Header } from '../components/header/header';
 // import Login from '../pages/login/login.component';
 import { About } from '../components/about/about';
-import { Apples } from '../components/apple/apple-basket';
+import Apples from '../components/apple/apple-basket';
 
 class Container extends React.Component<any, {}> {
     // 钩子函数

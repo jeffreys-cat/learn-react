@@ -5,7 +5,8 @@ export interface IAppleItemProps {
     apple?: IApple;
     eatApple?: (appleId: number) => void;
 }
-interface IApple {
+export interface IApple {
     id: number;
     weight: number;
+    isEaten: boolean;
 }
