@@ -6,9 +6,6 @@ export class AppleItem extends React.Component<IAppleItemProps, {}> {
     constructor(props: IAppleItemProps) {
         super(props);
     }
-    eatApple(appleId: number) {
-        return;
-    }
 
     public render() {
         const { apple } = this.props;
@@ -18,11 +15,11 @@ export class AppleItem extends React.Component<IAppleItemProps, {}> {
                     <img src={require('../../../assets/imgs/apple.png')} alt="apple"/>
                 </div>
                 <div className="info">
-                    <div className="name">红苹果 - {apple ? apple.id : apple}号</div>
-                    <div className="weight">{apple ? apple.weight : apple}克</div>
+                    <div className="name">红苹果 - {apple.id}号</div>
+                    <div className="weight">{apple.weight}克</div>
                 </div>
                 <div className="btn-div">
-                    <button onClick={() => apple ? this.eatApple((apple.id)) : null}> 吃掉 </button>
+                    <button onClick={() => this.props.eatApple(apple.id)}> 吃掉 </button>
                 </div>
             </div>
         );

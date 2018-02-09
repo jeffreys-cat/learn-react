@@ -2,8 +2,8 @@
 //     apple?: IApple;
 // }
 export interface IAppleItemProps {
-    apple?: IApple;
-    eatApple?: (appleId: number) => void;
+    apple: IApple;
+    eatApple: (appleId: number) => void;
 }
 export interface IApple {
     id: number;

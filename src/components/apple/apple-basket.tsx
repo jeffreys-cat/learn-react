@@ -68,8 +68,6 @@ class Apples extends React.Component<IAppleBasketProps, {}> {
                 </div>
                 <div className="appleList">
                     {this.getAppleItem(appleBasket.apples)}
-                    <AppleItem/>
-                    {/* <div className="empty-tip">苹果篮子空空如也</div> */}
                 </div>
                 <div className="btn-div">
                 <button className={appleBasket.isPicking ? 'disabled' : ''} onClick={this.props.actions.pickApple} >摘苹果</button>
