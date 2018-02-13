@@ -1,4 +1,7 @@
 import { Dispatch } from 'react-redux';
+import axios, { AxiosResponse } from 'axios';
+import { IResult } from '../models/http.model';
+import { IAppleResponse } from './appleResponse.model';
 const actions = {
     pickApple: () => {
         return function (dispatch: Dispatch<any>, getState: Function) {
@@ -9,17 +12,17 @@ const actions = {
 
             dispatch(actions.beginPickApple);
 
-            fetch('https://hacker-news.firebaseio.com/v0/jobstories.json')
-                .then((res: any) => {
-                    if (res.status !== 200) {
-                        dispatch(actions.failPickApple(res.statusText));
-                    } 
-
+            axios.get('http://localhost:8081/test/girls')
+            .then((res: AxiosResponse<IResult<IAppleResponse>>) => {
+                if (res.data.code === 0) {
                     const weight = Math.floor(200 + Math.random() * 50);
                     dispatch(actions.donePickApple(weight));
-
-                }).catch(e => {
-                dispatch(actions.failPickApple(e.statusText));
+                } else {
+                    dispatch(actions.failPickApple);
+                }
+            })
+            .catch(error => {
+                dispatch(actions.failPickApple(error.statusText));
             });
         };
     },
