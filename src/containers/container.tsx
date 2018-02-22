@@ -11,11 +11,11 @@ class Container extends React.Component<any, {}> {
     // 钩子函数
     componentDidMount() {
         console.log('app mounted!');
-        // if (!localStorage.getItem('isLogined')) {
-        //     this.props.history.push({
-        //         pathname: '/login'
-        //     });
-        // }
+        if (!localStorage.getItem('isLogined')) {
+            this.props.history.push({
+                pathname: '/login'
+            });
+        }
     }
     render() {
         return (

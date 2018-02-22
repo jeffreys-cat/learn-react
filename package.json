@@ -60,6 +60,7 @@
     "redux-actions": "^2.2.1",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.2.0",
+    "rxjs": "^5.5.6",
     "sweetalert2": "^7.8.6"
   },
   "scripts": {

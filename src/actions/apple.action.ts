@@ -1,7 +1,5 @@
+import { httpClient } from './../utils/http';
 import { Dispatch } from 'react-redux';
-import axios, { AxiosResponse } from 'axios';
-import { IResult } from '../models/http.model';
-import { IAppleResponse } from './appleResponse.model';
 const actions = {
     pickApple: () => {
         return function (dispatch: Dispatch<any>, getState: Function) {
@@ -12,18 +10,16 @@ const actions = {
 
             dispatch(actions.beginPickApple);
 
-            axios.get('http://localhost:8081/test/girls')
-            .then((res: AxiosResponse<IResult<IAppleResponse>>) => {
-                if (res.data.code === 0) {
+            httpClient.get('http://localhost:8080/test/girls')
+            .subscribe(
+                (res) => {
                     const weight = Math.floor(200 + Math.random() * 50);
                     dispatch(actions.donePickApple(weight));
-                } else {
-                    dispatch(actions.failPickApple);
+                },
+                error => {
+                    dispatch(actions.failPickApple(error.statusText));
                 }
-            })
-            .catch(error => {
-                dispatch(actions.failPickApple(error.statusText));
-            });
+            );
         };
     },
     beginPickApple: () => ({

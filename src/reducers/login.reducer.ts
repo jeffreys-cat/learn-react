@@ -1,16 +1,17 @@
 import { Action } from 'redux';
-import axios from 'axios';
+import { httpClient } from '../utils/http';
 
 export const loginReducer = (state: boolean = false, action: Action) => {
     switch (action.type) {
         case 'LOGIN':
-            axios.get('http://localhost:8080/test/girls')
-                .then(function (response: any) {
-                    console.log(response);
-                })
-                .catch(function (error: any) {
-                    console.log(error);
-                });
+            httpClient.get('http://localhost:8080/test/girls')
+                .subscribe(
+                    res => {
+                        console.log(res);
+                        localStorage.setItem('isLogined', 'true');
+                    },
+                    (err) => console.error(err)
+                );
             return state = true;
         case 'LOGOUT':
             return;
