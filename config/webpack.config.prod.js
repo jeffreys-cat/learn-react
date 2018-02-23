@@ -120,9 +120,13 @@ module.exports = {
         include: paths.appSrc,
       },
       {
-          test: /\.(scss|sass)$/, 
-          exclude: helpers.root('node_modules'), 
-          loader: 'raw-loader!sass-loader'
+        test: /\.scss$/,
+        include: paths.appSrc,
+        loaders: [
+          require.resolve('style-loader'), 
+          require.resolve('css-loader'), 
+          require.resolve('sass-loader')
+        ]
       },
       // ** ADDING/UPDATING LOADERS **
       // The "file" loader handles all assets unless explicitly excluded.
