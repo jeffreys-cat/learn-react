@@ -15,6 +15,10 @@ class Container extends React.Component<any, {}> {
             this.props.history.push({
                 pathname: '/login'
             });
+        } else {
+            this.props.history.push({
+                pathname: '/'
+            });
         }
     }
     render() {

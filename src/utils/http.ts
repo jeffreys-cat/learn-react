@@ -34,4 +34,4 @@ class HttpClient {
     }
 }
 // Export A HttpClient Instance
-export const httpClient = new HttpClient();
+export const http = new HttpClient();

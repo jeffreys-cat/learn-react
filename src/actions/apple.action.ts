@@ -1,4 +1,4 @@
-import { httpClient } from './../utils/http';
+import { http } from './../utils/http';
 import { Dispatch } from 'react-redux';
 const actions = {
     pickApple: () => {
@@ -10,7 +10,7 @@ const actions = {
 
             dispatch(actions.beginPickApple);
 
-            httpClient.get('http://localhost:8080/test/girls')
+            http.get('/test/girls')
             .subscribe(
                 (res) => {
                     const weight = Math.floor(200 + Math.random() * 50);

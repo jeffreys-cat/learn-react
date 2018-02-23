@@ -1,10 +1,10 @@
 import { Action } from 'redux';
-import { httpClient } from '../utils/http';
+import { http } from '../utils/http';
 
 export const loginReducer = (state: boolean = false, action: Action) => {
     switch (action.type) {
         case 'LOGIN':
-            httpClient.get('/test/girls')
+            http.get('/test/girls')
                 .subscribe(
                     res => {
                         console.log(res);
