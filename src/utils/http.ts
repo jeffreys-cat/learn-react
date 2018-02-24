@@ -29,7 +29,7 @@ class HttpClient {
      * @return Observable<IResult<any>>
      */
     post(url: string, data?: any, config?: AxiosRequestConfig): Observable<IResult<any>> {
-        return Observable.fromPromise(axios.post(url, data, config))
+        return Observable.fromPromise(axios.post(this.baseUrl + url, data, config))
                     .map(response => response.data);
     }
 }

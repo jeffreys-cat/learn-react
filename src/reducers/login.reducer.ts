@@ -1,15 +1,19 @@
+import { authService } from './../utils/auth.service';
 import { Action } from 'redux';
-import { http } from '../utils/http';
+import { history } from '../utils/history';
 
 export const loginReducer = (state: boolean = false, action: Action) => {
     switch (action.type) {
         case 'LOGIN':
-            http.get('/test/girls')
+            authService.login()
                 .subscribe(
                     res => {
-                        // localStorage.setItem('isLogined', 'true');
-                    },
-                    (err) => console.error(err)
+                        if (res.code === 0) {
+                            localStorage.setItem('isLogined', 'true');
+                            history.replace('/');
+                        }
+                        return;
+                    }
                 );
             return state = true;
         case 'LOGOUT':
