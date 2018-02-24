@@ -14,7 +14,7 @@ class Home extends React.Component<IHomeProps, IHomeState> {
     }
     // render
     render() {
-        const { onDecrement, onIncrement } = this.props;
+        const { onDecrement, onIncrement } = this.props.counterActions;
         return (
             <div className="hello">
                 <div className="greeting">
@@ -31,4 +31,4 @@ class Home extends React.Component<IHomeProps, IHomeState> {
     }
 }
 
-export default connect(counterStateToProps, counterDispatchToProps)(Home);
+export default connect(counterStateToProps, counterDispatchToProps)(Home);  

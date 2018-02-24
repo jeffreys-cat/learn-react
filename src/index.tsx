@@ -5,16 +5,19 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import rootReducers from './reducers/index.reducer';
+import createHistory from 'history/createBrowserHistory';
+import { routerMiddleware } from 'react-router-redux';
 
 import routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
 import './index.scss';
 
 const logger = createLogger();
+const history = routerMiddleware(createHistory());
 
 const store = createStore(
     rootReducers,
-    applyMiddleware(thunk, logger)
+    applyMiddleware(thunk, history, logger)
 );
 
 ReactDOM.render(
