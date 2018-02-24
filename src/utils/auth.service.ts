@@ -31,7 +31,11 @@ class AuthService {
     }
 
     checkLogin(): boolean {
-        return true;
+        if (localStorage.getItem('isLogined') === 'true') {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
 
