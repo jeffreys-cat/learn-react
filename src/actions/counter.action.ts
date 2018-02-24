@@ -1,5 +1,6 @@
-import { createAction } from 'redux-actions';
+const counterActions =  {
+    onIncrement: () => ({ type: 'INCREMENT' }),
+    onDecrement: () => ({ type: 'DECREMENT' })
+};
 
-export const increment = createAction('INCREMENT');
-export const decrement = createAction('DECREMENT');
-export const reset = createAction('RESET');
+export default counterActions;

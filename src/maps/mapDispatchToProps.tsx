@@ -1,6 +1,6 @@
 import { Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import counterActions from '../actions/login.action';
+import counterActions from '../actions/counter.action';
 
 interface ICounterAction {
     type: string;
