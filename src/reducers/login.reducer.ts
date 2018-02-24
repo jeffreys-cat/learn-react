@@ -7,7 +7,7 @@ export const loginReducer = (state: boolean = false, action: Action) => {
             http.get('/test/girls')
                 .subscribe(
                     res => {
-                        localStorage.setItem('isLogined', 'true');
+                        // localStorage.setItem('isLogined', 'true');
                     },
                     (err) => console.error(err)
                 );

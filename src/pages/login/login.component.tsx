@@ -50,7 +50,7 @@ class Login extends React.Component<ILoginProps, ILoginState> {
                             <input type="checkbox" defaultChecked={true}/> 记住密码
                         </label>
                     </div>
-                    <a className="login-button center-block" onClick={this.props.login}>登录</a>
+                    <a className="login-button center-block" onClick={this.props.authActions.login}>登录</a>
                 </form>
             </div>
         );

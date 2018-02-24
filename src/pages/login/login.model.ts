@@ -1,8 +1,11 @@
 export interface ILoginProps {
-    login: () => void;
+    authActions: IAuthActions;
 }
 
 export interface ILoginState {
     username: string;
     password: string;
+}
+interface IAuthActions {
+    login: () => void;
 }

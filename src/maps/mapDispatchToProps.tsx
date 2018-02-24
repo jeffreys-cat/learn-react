@@ -1,6 +1,7 @@
 import { Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import counterActions from '../actions/counter.action';
+import authActions from '../actions/auth.action';
 
 interface ICounterAction {
     type: string;
@@ -11,8 +12,6 @@ export const counterDispatchToProps = (dispatch: Dispatch<ICounterAction>) => ({
 });
 
 // Login
-export const loginDispatchToProps = (dispatch: Dispatch<any>, ownProps: any) => {
-    return {
-        login: () => dispatch({ type: 'LOGIN' })
-    };
-};
+export const loginDispatchToProps = (dispatch: Dispatch<any>, ownProps: any) => ({
+    authActions: bindActionCreators(authActions, dispatch)
+});
