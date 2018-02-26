@@ -1,6 +1,6 @@
 import * as React from 'react';
 import './about.scss';
-const logo = require('../../assets/imgs/logo.svg');
+const logo = require('../../../assets/imgs/logo.svg');
 
 export class About extends React.Component<{}, {}> {
 

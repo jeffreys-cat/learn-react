@@ -2,10 +2,10 @@ import * as React from 'react';
 import './apple-basket.scss';
 import { AppleItem } from './apple-item/apple-item';
 import { bindActionCreators } from 'redux';
-import actions from '../../actions/apple.action';
 import { connect, Dispatch } from 'react-redux';
 import { IApple } from './apple-item/apple-item.model';
-import { IAppleBasketProps, IAppleStatus } from './apple-basket.model';
+import { IAppleBasketProps, IAppleStatus } from './apple.model';
+import actions from './apple.action';
 
 class Apples extends React.Component<IAppleBasketProps, {}> {
     private calculate(): IAppleStatus {
@@ -45,7 +45,7 @@ class Apples extends React.Component<IAppleBasketProps, {}> {
     public render() {
         const appleBasket = this.props.appleBasket;
 
-        const status: IAppleStatus = this.calculate();
+        const status = this.calculate();
 
         return (
             <div className="apple-basket">
@@ -71,14 +71,12 @@ class Apples extends React.Component<IAppleBasketProps, {}> {
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        appleBasket: state.appleBasketReducer
-    };
-};
+const mapStateToProps = state => ({
+    appleBasket: state.appleBasketReducer
+});
 
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
     actions: bindActionCreators(actions, dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Apples);
+export default connect(mapStateToProps, mapDispatchToProps)(Apples); 

@@ -12,7 +12,7 @@ export class AppleItem extends React.Component<IAppleItemProps, {}> {
         return (
             <div className="apple-item">
                 <div className="apple">
-                    <img src={require('../../../assets/imgs/apple.png')} alt="apple"/>
+                    <img src={require('../../../../assets/imgs/apple.png')} alt="apple"/>
                 </div>
                 <div className="info">
                     <div className="name">红苹果 - {apple.id}号</div>

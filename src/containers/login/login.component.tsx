@@ -1,9 +1,9 @@
 import * as React from 'react';
 import './login.component.scss';
 import { ILoginState, ILoginProps } from './login.model';
-import { loginStateToProps } from '../../maps/mapStateToProps';
-import { loginDispatchToProps } from '../../maps/mapDispatchToProps';
-import { connect } from 'react-redux';
+import { connect, Dispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import authActions from '../../actions/auth.action';
 
 class Login extends React.Component<ILoginProps, ILoginState> {
     constructor(props: ILoginProps) {
@@ -56,5 +56,14 @@ class Login extends React.Component<ILoginProps, ILoginState> {
         );
     }
 }
+
+// Login
+const loginDispatchToProps = (dispatch: Dispatch<any>, ownProps: any) => ({
+    authActions: bindActionCreators(authActions, dispatch)
+});
+
+const loginStateToProps = (state: any): any => {
+    return state;
+};
 
 export default connect(loginStateToProps, loginDispatchToProps)(Login);

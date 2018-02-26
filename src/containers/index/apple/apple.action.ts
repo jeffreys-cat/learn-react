@@ -1,5 +1,5 @@
-import { http } from './../utils/http';
 import { Dispatch } from 'react-redux';
+import { http } from '../../../utils/http';
 const actions = {
     pickApple: () => {
         return function (dispatch: Dispatch<any>, getState: Function) {

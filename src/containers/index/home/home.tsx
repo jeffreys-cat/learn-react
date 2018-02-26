@@ -2,8 +2,9 @@ import * as React from 'react';
 import './home.scss';
 import { IHomeProps, IHomeState } from './home.model';
 import { connect } from 'react-redux';
-import { counterDispatchToProps } from '../../maps/mapDispatchToProps';
-import { counterStateToProps } from '../../maps/mapStateToProps';
+import { Dispatch } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import counterActions from './counter.action';
 
 class Home extends React.Component<IHomeProps, IHomeState> {
     constructor(props: IHomeProps) {
@@ -30,5 +31,16 @@ class Home extends React.Component<IHomeProps, IHomeState> {
         );
     }
 }
+
+// Counter
+const counterDispatchToProps = (dispatch: Dispatch<any>) => ({
+    counterActions: bindActionCreators(counterActions, dispatch)
+});
+
+const counterStateToProps = (state: any): any => {
+    return {
+        enthusiasmLevel: state.counter
+    };
+};
 
 export default connect(counterStateToProps, counterDispatchToProps)(Home);  

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import * as counter from './counter.reducer';
 import * as loginReducer from './login.reducer';
-import * as appleBasketReducer from './apple-basket.reducer';
+import * as appleBasketReducer from '../containers/index/apple/apple.reducer';
 
 const rootReducers = combineReducers({
     ...counter,

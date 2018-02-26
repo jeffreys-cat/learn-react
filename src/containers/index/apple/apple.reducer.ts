@@ -1,5 +1,5 @@
-import { IAppleBasketState } from './../components/apple/apple-basket.model';
 import { fromJS } from 'immutable';
+import { IAppleBasketState } from './apple.model';
 // import appleBasket from '../components/apple/apple-basket';
 
 const InitialState: IAppleBasketState = {

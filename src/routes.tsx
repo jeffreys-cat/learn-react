@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
 import Container from './containers/container';
-import Login from './pages/login/login.component';
+import Login from './containers/login/login.component';
 import { authService } from './utils/auth.service';
 import { Redirect } from 'react-router';
 
