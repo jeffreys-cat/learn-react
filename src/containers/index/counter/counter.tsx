@@ -1,12 +1,12 @@
 import * as React from 'react';
-import './home.scss';
-import { IHomeProps, IHomeState } from './home.model';
+import './counter.scss';
+import { IHomeProps, IHomeState } from './counter.model';
 import { connect } from 'react-redux';
 import { Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import counterActions from './counter.action';
 
-class Home extends React.Component<IHomeProps, IHomeState> {
+class Counter extends React.Component<IHomeProps, IHomeState> {
     constructor(props: IHomeProps) {
         super(props);
         this.state = {
@@ -43,4 +43,4 @@ const counterStateToProps = (state: any): any => {
     };
 };
 
-export default connect(counterStateToProps, counterDispatchToProps)(Home);  
+export default connect(counterStateToProps, counterDispatchToProps)(Counter);  

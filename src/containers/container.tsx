@@ -4,7 +4,7 @@ import './container.scss';
 import { Header } from './index/header/header';
 import { About } from './index/about/about';
 import Apples from './index/apple/apple-basket';
-import Home from './index/home/home';
+import Counter from './index/counter/counter';
 
 class Container extends React.Component<any, {}> {
     // 钩子函数
@@ -16,7 +16,7 @@ class Container extends React.Component<any, {}> {
             <Router>
                 <div>
                     <Header/>
-                    <Route exact={true} path="/" component={Home}/>
+                    <Route exact={true} path="/" component={Counter}/>
                     <Route path="/about" component={About}/>
                     <Route path="/apples" component={Apples}/>
                 </div>
