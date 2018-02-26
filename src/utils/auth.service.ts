@@ -1,15 +1,11 @@
 import { IResult } from './../models/http.model';
 import { Observable } from 'rxjs';
 import { http } from './http';
+
 interface IAuthResponse {
     token: string;
     userInfo: IUserInfo;
 }
-/**
- * @param username 用户名
- * @param age 年龄
- * @param cupSize Cup
- */
 interface IUserInfo {
     username: string;
     age: number;
