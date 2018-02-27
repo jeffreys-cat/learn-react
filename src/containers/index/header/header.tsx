@@ -32,7 +32,7 @@ export class Header extends React.Component<IHeaderProps, IHeaderState> {
         const normalStyle = {
             color: 'white'
         };
-        const headerItems = InitializedHeaderLinks.map((link: ILink) => (
+        const headerItems = InitializedHeaderLinks.map((link) => (
             <li key={link.id.toString()} onClick={() => this.clickHandle(link)}>
                 <Link to={link.to} style={link.checked ? checkedStyle : normalStyle}>{link.name}</Link>
             </li>
