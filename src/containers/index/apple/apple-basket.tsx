@@ -4,10 +4,10 @@ import { AppleItem } from './apple-item/apple-item';
 import { bindActionCreators } from 'redux';
 import { connect, Dispatch } from 'react-redux';
 import { IApple } from './apple-item/apple-item.model';
-import { IAppleBasketProps, IAppleStatus } from './apple.model';
+import { IAppleBasketProps, IAppleStatus, IAppleBasketState } from './apple.model';
 import actions from './apple.action';
 
-class Apples extends React.Component<IAppleBasketProps, {}> {
+class Apples extends React.Component<IAppleBasketProps, IAppleBasketState> {
     private calculate(): IAppleStatus {
         const status: IAppleStatus = {
             appleEaten: {
