@@ -1,3 +1,8 @@
 .github-user {
     margin: 20px;
+    .github-user-display {
+        display: flex;
+        align-content: center;
+        margin-top: 20px;
+    }
 }
