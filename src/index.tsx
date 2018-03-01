@@ -11,13 +11,23 @@ import { routerMiddleware } from 'react-router-redux';
 import routes from './routes';
 import registerServiceWorker from './registerServiceWorker';
 import './index.scss';
+import { rootEpic } from './epics/root.epics';
+import { createEpicMiddleware } from 'redux-observable';
+// import { searchUserReducer } from './containers/index/github-user/github-user.reducer';
+// import { compose } from 'redux';
 
 const logger = createLogger();
 const history = routerMiddleware(createHistory());
+const epicMiddleware = createEpicMiddleware(rootEpic);
+// const composeEnhancers = (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+
+// const reducer = combineReducers({
+//     searchUserReducer
+// });
 
 const store = createStore(
     rootReducers,
-    applyMiddleware(thunk, history, logger)
+    applyMiddleware(thunk, epicMiddleware, history, logger)
 );
 
 ReactDOM.render(

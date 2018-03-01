@@ -5,7 +5,7 @@ import { Header } from './index/header/header';
 import { About } from './index/about/about';
 import Apples from './index/apple/apple-basket';
 import Counter from './index/counter/counter';
-import { GithubUser } from './index/github-user/github-user';
+import GithubUser from './index/github-user/github-user';
 
 class Container extends React.Component<any, {}> {
     // 钩子函数
