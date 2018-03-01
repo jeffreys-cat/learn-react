@@ -1,7 +1,7 @@
 import * as mutation from './github-user.mutation';
 import * as userActions from './github-user.action';
-
 import { http } from './../../../utils/http';
+
 const searchUser$ = (username, page) => {
     return http.get(`https://api.github.com/search/users?q=${username}&page=${page}`, {
         hasBaseUrl: false
@@ -17,6 +17,6 @@ export const searchUsersEpic = action$ => {
           .catch(error => {
                 userActions.searchUsersFailedAction();
                 return error;
-          });
-      });
-  };
+        });
+    });
+};
