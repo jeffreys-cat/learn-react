@@ -22,17 +22,23 @@ interface IGithubUserState {
 class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
     private getGithubUserList() {
         const data = Array<JSX.Element>();
-        this.props.searchUser.data.map((user, index) => {
+        if (this.props.searchUser.loading) {
             data.push((
-                <li key={index} className="github-user-list-user-item">
-                    <div>
-                        <img src={user.avatar_url} className="github-user-list-user-item-img" />
-                        <span>{user.login}</span>
-                    </div>
-                    <FontAwesomeIcon icon={faAngleRight} className="github-user-list-arrow" />
-                </li>
+                <span>Loading...</span>
             ));
-        });
+        } else {
+            this.props.searchUser.data.map((user, index) => {
+                data.push((
+                    <li key={index} className="github-user-list-user-item">
+                        <div>
+                            <img src={user.avatar_url} className="github-user-list-user-item-img" />
+                            <span>{user.login}</span>
+                        </div>
+                        <FontAwesomeIcon icon={faAngleRight} className="github-user-list-arrow" />
+                    </li>
+                ));
+            });
+        }
         return data;
     }
     public render() {
@@ -41,7 +47,7 @@ class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
                 <GithubUserSearch searchUser={this.props.searchUserActions} />
                 <section className="github-user-display">
                     <div className="github-user-list">
-                        <h3 className="github-user-list-title">Users <em> (1234)</em></h3>
+                        <h3 className="github-user-list-title">Users <strong> ({this.props.searchUser.total})</strong></h3>
                         {this.getGithubUserList()}                        
                     </div>
                 </section>

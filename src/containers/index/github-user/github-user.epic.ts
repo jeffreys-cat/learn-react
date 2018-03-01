@@ -3,6 +3,7 @@ import * as userActions from './github-user.action';
 import { http } from './../../../utils/http';
 
 const searchUser$ = (username, page) => {
+    username = username.trim();
     return http.get(`https://api.github.com/search/users?q=${username}&page=${page}`, {
         hasBaseUrl: false
     });
