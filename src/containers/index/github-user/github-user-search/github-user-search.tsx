@@ -15,18 +15,11 @@ export class GithubUserSearch extends React.Component<IGithubUserSearchProps, IG
             username: ''
         };
     }
-    search(username: string) {
-        //
-    }
 
     // bind form
     private handleChange = (key) => {
         return (event: React.FormEvent<HTMLInputElement>) => {
             const target = event.target as HTMLInputElement;
-            console.log(
-                typeof {[key]: target.value},
-                {[key]: target.value}
-            );
             this.setState(
                 {[key]: target.value}
             );

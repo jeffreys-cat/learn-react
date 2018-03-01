@@ -11,6 +11,7 @@ const searchUser$ = (username, page) => {
 export const searchUsersEpic = action$ => {
     return action$
       .ofType(mutation.FETCH_GITHUB_SEARCH_USER_LOADING)
+      .debounceTime(500)
       .mergeMap(e => {
         return searchUser$(e.payload.username, e.payload.page)
           .map(list => userActions.searchUsersSuccessAction(list))
