@@ -6,6 +6,7 @@ import { bindActionCreators } from 'redux';
 import { searchUsersAction } from './github-user.action';
 import * as FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import * as faAngleRight from '@fortawesome/fontawesome-free-solid/faAngleRight';
+import { GithubUserTitle } from './github-user-title/github-user-title';
 
 interface IGithubUserProps {
     searchUser: IGithubUserState;
@@ -24,7 +25,7 @@ class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
         const data = Array<JSX.Element>();
         if (this.props.searchUser.loading) {
             data.push((
-                <span>Loading...</span>
+                <span key={0}>Loading...</span>
             ));
         } else {
             this.props.searchUser.data.map((user, index) => {
@@ -47,8 +48,11 @@ class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
                 <GithubUserSearch searchUser={this.props.searchUserActions} />
                 <section className="github-user-display">
                     <div className="github-user-list">
-                        <h3 className="github-user-list-title">Users <strong> ({this.props.searchUser.total})</strong></h3>
-                        {this.getGithubUserList()}                        
+                        <GithubUserTitle total={this.props.searchUser.total} title="Users" />
+                        {this.getGithubUserList()}
+                    </div>
+                    <div className="github-user-followers">
+                        <GithubUserTitle total={this.props.searchUser.total} title="Followers" />
                     </div>
                 </section>
             </div>

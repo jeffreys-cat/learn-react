@@ -4,15 +4,13 @@
         display: flex;
         align-content: center;
         margin-top: 20px;
-        .github-user-list {
+        @mixin user-item {
             width: calc(100% / 3);
             height: 400px;
             border: 1px solid #ccc;
-            .github-user-list-title {
-                font-weight: bold;
-                padding: 10px 0 10px 10px;
-                border-bottom: 1px solid #ccc;
-            }
+        }
+        .github-user-list {
+            @include user-item;
             .github-user-list-user-item {
                 display: flex;
                 align-items: center;
@@ -34,6 +32,9 @@
                     float: right;
                 }
             }
+        }
+        .github-user-followers {
+            @include user-item;
         }
     }
 }
