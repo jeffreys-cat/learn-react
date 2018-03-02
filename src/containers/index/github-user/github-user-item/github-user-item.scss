@@ -1,0 +1,21 @@
+.github-user-list-user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    div {
+        display: flex;
+        align-items: center;
+        margin-bottom: 4px;
+        .github-user-list-user-item-img {
+            width: 30px;
+            height: 30px;;
+            margin-right: 6px;
+        }
+    }
+    .github-user-list-arrow {
+        float: right;
+    }
+}

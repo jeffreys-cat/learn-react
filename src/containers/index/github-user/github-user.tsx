@@ -4,9 +4,8 @@ import { GithubUserSearch } from './github-user-search/github-user-search';
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { searchUsersAction } from './redux/github-user.action';
-import * as FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import * as faAngleRight from '@fortawesome/fontawesome-free-solid/faAngleRight';
 import { GithubUserTitle } from './github-user-title/github-user-title';
+import { GithubUserItem } from './github-user-item/github-user-item';
 
 interface IGithubUserProps {
     searchUser: IGithubUserState;
@@ -30,13 +29,7 @@ class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
         } else {
             this.props.searchUser.data.map((user, index) => {
                 data.push((
-                    <li key={index} className="github-user-list-user-item">
-                        <div>
-                            <img src={user.avatar_url} className="github-user-list-user-item-img" />
-                            <span>{user.login}</span>
-                        </div>
-                        <FontAwesomeIcon icon={faAngleRight} className="github-user-list-arrow" />
-                    </li>
+                    <GithubUserItem key={index} user={user} />
                 ));
             });
         }
