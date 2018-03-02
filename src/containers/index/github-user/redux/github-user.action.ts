@@ -1,4 +1,4 @@
-import * as mutations from '../github-user/github-user.mutation';
+import * as mutations from './github-user.mutation';
 
 export const searchUsersAction = (username, page = 1) => {
     return {

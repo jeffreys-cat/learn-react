@@ -1,6 +1,6 @@
 import * as mutation from './github-user.mutation';
 import * as userActions from './github-user.action';
-import { http } from './../../../utils/http';
+import { http } from './../../../../utils/http';
 
 const searchUser$ = (username, page) => {
     username = username.trim();

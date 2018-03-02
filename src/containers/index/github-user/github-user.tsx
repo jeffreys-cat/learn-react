@@ -3,7 +3,7 @@ import './github-user.scss';
 import { GithubUserSearch } from './github-user-search/github-user-search';
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchUsersAction } from './github-user.action';
+import { searchUsersAction } from './redux/github-user.action';
 import * as FontAwesomeIcon from '@fortawesome/react-fontawesome';
 import * as faAngleRight from '@fortawesome/fontawesome-free-solid/faAngleRight';
 import { GithubUserTitle } from './github-user-title/github-user-title';
