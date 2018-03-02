@@ -3,13 +3,15 @@ import './github-user.scss';
 import { GithubUserSearch } from './github-user-search/github-user-search';
 import { connect, Dispatch } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { searchUsersAction } from './redux/github-user.action';
+import { searchUsersAction, getUserFollowersAction } from './redux/github-user.action';
 import { GithubUserTitle } from './github-user-title/github-user-title';
 import { GithubUserItem } from './github-user-item/github-user-item';
 
 interface IGithubUserProps {
     searchUser: IGithubUserState;
+    getUserFollowers: IGithubUserState;
     searchUserActions: any;
+    getUserFollowersActions: any;
 }
 
 interface IGithubUserState {
@@ -29,23 +31,40 @@ class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
         } else {
             this.props.searchUser.data.map((user, index) => {
                 data.push((
-                    <GithubUserItem key={index} user={user} />
+                    <GithubUserItem key={index} user={user} getUserFollowersAction={this.props.getUserFollowersActions} />
                 ));
             });
         }
         return data;
     }
+    private getUserFollowers() {
+        const data = Array<JSX.Element>();
+        if (this.props.getUserFollowers.loading) {
+            data.push((
+                <span key={0}>Loading...</span>
+            ));
+        } else {
+            this.props.getUserFollowers.data.map((follower, index) => {
+                data.push(
+                    <GithubUserItem key={index} user={follower} getUserFollowersAction={this.props.getUserFollowersActions} />
+                );
+            });
+        }
+        return data;
+    }
     public render() {
+        const { searchUserActions, searchUser, getUserFollowers } = this.props;
         return (
             <div className="github-user">
-                <GithubUserSearch searchUser={this.props.searchUserActions} />
+                <GithubUserSearch searchUserAction={searchUserActions} />
                 <section className="github-user-display">
                     <div className="github-user-list">
-                        <GithubUserTitle total={this.props.searchUser.total} title="Users" />
+                        <GithubUserTitle total={searchUser.total} title="Users" />
                         {this.getGithubUserList()}
                     </div>
                     <div className="github-user-followers">
-                        <GithubUserTitle total={this.props.searchUser.total} title="Followers" />
+                        <GithubUserTitle total={getUserFollowers.total} title="Followers" />
+                        {this.getUserFollowers()}
                     </div>
                 </section>
             </div>
@@ -54,10 +73,12 @@ class GithubUser extends React.Component<IGithubUserProps, IGithubUserState> {
 }
 
 const mapStateToProps = state => ({
-    searchUser: state.searchUserReducer
+    searchUser: state.searchUserReducer,
+    getUserFollowers: state.getUserFollowersReducer
 });
 const mapDispatchToProps = (dispatch: Dispatch<any>) => ({
-    searchUserActions: bindActionCreators(searchUsersAction, dispatch)
+    searchUserActions: bindActionCreators(searchUsersAction, dispatch),
+    getUserFollowersActions: bindActionCreators(getUserFollowersAction, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(GithubUser); 

@@ -41,3 +41,26 @@ export const searchUserReducer = (state = InitializedSearchUserState, action: IS
             return state;
     }
 };
+
+export const getUserFollowersReducer = (state = InitializedSearchUserState, action: any) => {
+    switch (action.type) {
+        case mutation.FETCH_GITHUB_USER_FOLLOWERS_LOADING:
+            return {
+                ...state,
+                loading: true
+            };
+        case mutation.FETCH_GITHUB_USER_FOLLOWERS_SUCCESS:
+            return {
+                loading: false,
+                data: action.payload,
+                total: action.payload.length
+            };
+        case mutation.FETCH_GITHUB_USER_FOLLOWERS_FAILURE:
+            return {
+                loading: false,
+                error: action.error
+            };
+        default: 
+            return state;
+    }
+};

@@ -9,6 +9,13 @@ const searchUser$ = (username, page) => {
     });
 };
 
+const getUserFollowers$ = (username: string, page: number) => {
+    username = username.trim();    
+    return http.get(`https://api.github.com/users/${username}/followers?page=${page}`, {
+        hasBaseUrl: false
+    });
+};
+
 export const searchUsersEpic = action$ => {
     return action$
       .ofType(mutation.FETCH_GITHUB_SEARCH_USER_LOADING)
@@ -21,4 +28,18 @@ export const searchUsersEpic = action$ => {
                 return error;
         });
     });
+};
+
+export const getUserFollowersEpic = actions$ => {
+    return actions$
+        .ofType(mutation.FETCH_GITHUB_USER_FOLLOWERS_LOADING)
+        .debounceTime(500)
+        .mergeMap(e => {
+            return getUserFollowers$(e.payload.username, e.payload.page)
+                .map(list => userActions.getUserFollowersSuccessAction(list))
+                .catch(error => {
+                    userActions.getUserFollowersFailureAction(error);
+                    return error;
+                });
+        });
 };

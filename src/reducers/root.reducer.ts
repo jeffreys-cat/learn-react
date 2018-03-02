@@ -1,3 +1,4 @@
+import { getUserFollowersReducer } from './../containers/index/github-user/redux/github-user.reducer';
 import { combineReducers } from 'redux';
 
 import { counter } from './../containers/index/counter/counter.reducer';
@@ -9,7 +10,8 @@ const rootReducers = combineReducers({
     counter,
     loginReducer,
     appleBasketReducer,
-    searchUserReducer
+    searchUserReducer,
+    getUserFollowersReducer
 });
 
 export default rootReducers;

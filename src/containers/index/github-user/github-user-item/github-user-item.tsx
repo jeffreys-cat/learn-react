@@ -5,13 +5,14 @@ import './github-user-item.scss';
 
 interface IGithubUserItemProps {
     user: any;
+    getUserFollowersAction: (username: string, page: number) => void;
 }
 
 export class GithubUserItem extends React.Component<IGithubUserItemProps, {}> {
     public render() {
         const {user} = this.props;
         return (
-            <li className="github-user-list-user-item">
+            <li className="github-user-list-user-item" onClick={() => this.props.getUserFollowersAction(user.login, 1)}>
                 <div>
                     <img src={user.avatar_url} className="github-user-list-user-item-img" />
                     <span>{user.login}</span>

@@ -26,3 +26,27 @@ export const searchUsersFailedAction = () => {
         error: 'NOT FOUND THIS USER'
     };
 };
+
+export const getUserFollowersAction = (username: string, page = 1) => {
+    return {
+        type: mutations.FETCH_GITHUB_USER_FOLLOWERS_LOADING,
+        payload: {
+            username,
+            page
+        }
+    };
+};
+
+export const getUserFollowersSuccessAction = data => {
+    return {
+        type: mutations.FETCH_GITHUB_USER_FOLLOWERS_SUCCESS,
+        payload: data
+    };
+};
+
+export const getUserFollowersFailureAction = error => {
+    return {
+        type: mutations.FETCH_GITHUB_USER_FOLLOWERS_FAILURE,
+        error: error
+    };
+};

@@ -2,7 +2,7 @@ import * as React from 'react';
 import './github-user-search.scss';
 
 interface IGithubUserSearchProps {
-    searchUser: (username: string) => void;
+    searchUserAction: (username: string) => void;
 }
 interface IGithubUserSearchState {
     username: string;
@@ -32,7 +32,7 @@ export class GithubUserSearch extends React.Component<IGithubUserSearchProps, IG
                 <input className="input-material" placeholder="please input username"
                        value={this.state.username} onChange={this.handleChange('username')}
                  />
-                <button className="button-material xs" onClick={() => this.props.searchUser(this.state.username)}>Search</button>
+                <button className="button-material xs" onClick={() => this.props.searchUserAction(this.state.username)}>Search</button>
             </div>
         );
     }
