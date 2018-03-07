@@ -34,7 +34,7 @@ input.input-material {
     border: 1px solid #fff;
     height: 40px;
     line-height: 40px;
-    padding: 0 16px 0 32px;
+    padding: 0 16px 0 16px;
 }
 input.input-material:focus {
     border: 1px solid #42A5F5;
@@ -54,6 +54,11 @@ input.input-material:focus {
     box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
     line-height: 40px;
     font-size: 1.4rem;
+}
+
+.xs {
+    width: 80px;
+    line-height: 30px;
 }
 
 // sweetalert2

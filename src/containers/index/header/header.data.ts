@@ -17,5 +17,11 @@ export const InitializedHeaderLinks: Array<ILink> = [
         name: 'Apples',
         id: 3,
         checked: false
+    },
+    {
+        to: '/github-user',
+        name: 'GayHub User',
+        id: 4,
+        checked: false
     }
 ];

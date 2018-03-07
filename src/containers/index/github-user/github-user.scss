@@ -1,0 +1,18 @@
+.github-user {
+    margin: 20px;
+    .github-user-display {
+        display: flex;
+        align-content: center;
+        margin-top: 20px;
+        @mixin user-item {
+            width: calc(100% / 3);
+            border: 1px solid #ccc;
+        }
+        .github-user-list {
+            @include user-item;
+        }
+        .github-user-followers {
+            @include user-item;
+        }
+    }
+}

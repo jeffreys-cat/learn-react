@@ -5,6 +5,7 @@ import { Header } from './index/header/header';
 import { About } from './index/about/about';
 import Apples from './index/apple/apple-basket';
 import Counter from './index/counter/counter';
+import GithubUser from './index/github-user/github-user';
 
 class Container extends React.Component<any, {}> {
     // 钩子函数
@@ -19,6 +20,7 @@ class Container extends React.Component<any, {}> {
                     <Route exact={true} path="/" component={Counter}/>
                     <Route path="/about" component={About}/>
                     <Route path="/apples" component={Apples}/>
+                    <Route path="/github-user" component={GithubUser}/>
                 </div>
             </Router>
         );
