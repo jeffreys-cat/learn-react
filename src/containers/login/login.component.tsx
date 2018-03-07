@@ -19,9 +19,6 @@ class Login extends React.Component<ILoginProps, ILoginState> {
     private handleChange = (key) => {
         return (event: React.FormEvent<HTMLInputElement>) => {
             const target = event.target as HTMLInputElement;
-            console.log(
-                typeof {[key]: target.value}
-            );
             this.setState(
                 {[key]: target.value}
             );

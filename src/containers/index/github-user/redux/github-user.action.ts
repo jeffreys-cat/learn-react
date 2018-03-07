@@ -27,7 +27,7 @@ export const searchUsersFailedAction = () => {
     };
 };
 
-export const getUserFollowersAction = (username: string, page = 1) => {
+export const getUserFollowersAction = (username: string, page: number) => {
     return {
         type: mutations.FETCH_GITHUB_USER_FOLLOWERS_LOADING,
         payload: {
